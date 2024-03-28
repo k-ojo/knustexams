@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC CMakeFiles/my_program.dir/3-ex.cpp.o CMakeFiles/my_program.dir/input_helper.cpp.o CMakeFiles/my_program.dir/glad.c.o -o progr/my_program  /usr/lib/x86_64-linux-gnu/libglfw.so.3.3 

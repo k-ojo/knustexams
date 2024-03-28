@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+project(my_program)
+find_package(glfw3 3.3 REQUIRED)
+add_executable(my_program 3-ex.cpp input_helper.cpp glad.c)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+target_link_libraries(my_program glfw)
+set_target_properties(my_program PROPERTIES RUNTIME_OUTPUT_DIRECTORY progr)

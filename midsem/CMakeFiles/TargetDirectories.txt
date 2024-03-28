@@ -1,0 +1,3 @@
+/home/k-ojo/midsem/CMakeFiles/my_program.dir
+/home/k-ojo/midsem/CMakeFiles/edit_cache.dir
+/home/k-ojo/midsem/CMakeFiles/rebuild_cache.dir
