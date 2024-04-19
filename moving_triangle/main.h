@@ -3,9 +3,18 @@
 #include <glad/glad.h>
 #include<GLFW/glfw3.h>
 #include <math.h>
-#include <stdlib.h>
+#include <string>
+#include <fstream>
+#include <sstream>
 #include <iostream>
-#include <stdio.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+
+#define SCR_WIDTH 800
+#define SCR_HEIGHT 600
+
 
  
 void processInput(GLFWwindow *window);
@@ -22,6 +31,11 @@ class Shader
     public:
     unsigned int ID;
 
+    Shader(const char* vertextPath, const char* fragmentPath);
+    void use();
+    void setBool(const std::string &name, bool value) const;
+    void setInt(const std::string &name, int value) const;   
+    void setFloat(const std::string &name, float value) const;    
 };
 
 #endif
