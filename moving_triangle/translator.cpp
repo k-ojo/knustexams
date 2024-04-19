@@ -18,13 +18,13 @@ void updatePos(float& numX, float& numY, bool& incrementingX, bool& incrementing
     // Update position along X axis
     if (incrementingX) {
         if (numX < 0.75)  
-            numX += 0.01;
+            numX += 0.009;
         else 
             incrementingX = false; 
     }
     else {
         if (numX > -0.75) 
-            numX -= 0.01;
+            numX -= 0.009;
         else 
             incrementingX = true;
     }
