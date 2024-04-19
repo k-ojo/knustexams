@@ -86,11 +86,23 @@ Shader::Shader(const char* vertexPath, const char* fragmentPath)
 
 }
 
+/**
+ * use- a method for activating a sharder program
+ * 
+ * Return: nothing
+*/
 void Shader::use() 
 { 
     glUseProgram(ID);
 }
 
+/**
+ * setBool-a method for setting a boolean uniform value from cpu to shader of gpu
+ * @name: name of uniform
+ * @value: value, true or false
+ * 
+ * Return: nothing
+*/
 void Shader::setBool(const std::string &name, bool value) const
 {         
     glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value); 

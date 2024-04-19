@@ -91,6 +91,9 @@ int main(void)
 	//wireframe 
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
+	int count = 1;
+	float x, y, z;
+
 	//the rendering loop
 	while (!glfwWindowShouldClose(window))
 	{
@@ -106,10 +109,16 @@ int main(void)
 		
 		//ourShader.setFloat("xOffset", offset);
 
-
+		if (count >= 1000)
+		{
+			x++;
+			count = 0;
+		}
+		else
+			count++;
 		glm::mat4 transform = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-        transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
-        transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+        transform = glm::translate(transform, glm::vec3(-sin(x), -0.5f, 0.0f));
+        //transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 
 		unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
 		glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
@@ -123,6 +132,7 @@ int main(void)
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 	}
+
 
     glDeleteVertexArrays(1, &VAO);
     glDeleteBuffers(1, &VBO);
