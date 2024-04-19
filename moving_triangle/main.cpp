@@ -24,8 +24,8 @@ int main(void)
 	unsigned int VBO, VAO, EBO;
 	int  success, succ;
 	char infoLog[512];
-	float posX = 0.0f;
-    float posY = 0.0f;
+	float posX = -0.1;
+    float posY = 0.1f;
     bool incrementingX = true;
     bool incrementingY = true;
 

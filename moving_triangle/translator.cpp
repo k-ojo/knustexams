@@ -17,13 +17,13 @@ void updatePos(float& numX, float& numY, bool& incrementingX, bool& incrementing
 {
     // Update position along X axis
     if (incrementingX) {
-        if (numX < 0.75)  
+        if (numX < 0.9)  
             numX += 0.009;
         else 
             incrementingX = false; 
     }
     else {
-        if (numX > -0.75) 
+        if (numX > -0.9) 
             numX -= 0.009;
         else 
             incrementingX = true;
@@ -31,16 +31,16 @@ void updatePos(float& numX, float& numY, bool& incrementingX, bool& incrementing
 
     // Update position along Y axis
     if (incrementingY) {
-        if (numY < 0.75)  
+        if (numY < 0.9)  
             numY += 0.015;
         else 
             incrementingY = false;
     }
     else {
-        if (numY > -0.75) 
+        if (numY > -0.9) 
             numY -= 0.015;
         else 
             incrementingY = true;
     }
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    std::this_thread::sleep_for(std::chrono::milliseconds(60));
 }
