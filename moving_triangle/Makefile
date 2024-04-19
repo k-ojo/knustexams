@@ -249,6 +249,30 @@ shaders.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/shaders.cpp.s
 .PHONY : shaders.cpp.s
 
+translator.o: translator.cpp.o
+.PHONY : translator.o
+
+# target to build an object file
+translator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/translator.cpp.o
+.PHONY : translator.cpp.o
+
+translator.i: translator.cpp.i
+.PHONY : translator.i
+
+# target to preprocess a source file
+translator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/translator.cpp.i
+.PHONY : translator.cpp.i
+
+translator.s: translator.cpp.s
+.PHONY : translator.s
+
+# target to generate assembly for a file
+translator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_program.dir/build.make CMakeFiles/my_program.dir/translator.cpp.s
+.PHONY : translator.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -273,6 +297,9 @@ help:
 	@echo "... shaders.o"
 	@echo "... shaders.i"
 	@echo "... shaders.s"
+	@echo "... translator.o"
+	@echo "... translator.i"
+	@echo "... translator.s"
 .PHONY : help
 
 

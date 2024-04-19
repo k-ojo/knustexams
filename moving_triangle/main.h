@@ -10,8 +10,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
-
+#include <thread>
+#include<chrono>
 #define SCR_WIDTH 800
 #define SCR_HEIGHT 600
 
@@ -19,7 +19,8 @@
  
 void processInput(GLFWwindow *window);
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-
+void updatePos(float& numX, float& numY, bool& incrementingX, bool& incrementingY);
+glm::mat4 translate(float x, float y, float z);
 /**
  * Shader- shader class for reading from disk
  * @ID: the program ID

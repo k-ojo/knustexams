@@ -24,7 +24,13 @@ int main(void)
 	unsigned int VBO, VAO, EBO;
 	int  success, succ;
 	char infoLog[512];
-	float offset = 0.5f;
+	float posX = 0.0f;
+    float posY = 0.0f;
+    bool incrementingX = true;
+    bool incrementingY = true;
+
+
+
 
 
 
@@ -109,15 +115,10 @@ int main(void)
 		
 		//ourShader.setFloat("xOffset", offset);
 
-		if (count >= 1000)
-		{
-			x++;
-			count = 0;
-		}
-		else
-			count++;
-		glm::mat4 transform = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-        transform = glm::translate(transform, glm::vec3(-sin(x), -0.5f, 0.0f));
+		updatePos(posX, posY, incrementingX, incrementingY);
+        // Create translation matrix
+        glm::mat4 transform = translate(posX, posY, 0.0f);
+
         //transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 
 		unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
